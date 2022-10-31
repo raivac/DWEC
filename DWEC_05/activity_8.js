@@ -8,16 +8,9 @@ do{
 }   
     while(palabra !=null && palabra!="");
 
-    //bucle que irá pidiendo palabras hasta que se deje vacio
-while(palabra !=null && palabra!=""){
-    palabras.push(palabra);
-    palabra=prompt("Write a word ,or leave it empty if you want to finish");
-}
 
-//declaramos la fucion y le pasamos el array
-function RellenaMapa(array){
-    /*bucle que irá recorriendo el array y en caso de no estar la palabra la añadira  y se le añadira un 1,
-     por el contrario si esta ya la palabra en el mapa cogera el valor y se le sumara 1*/
+function Anagrama(array){
+   
     for(palabra of array){
         if(!mapa.has(palabra)){
             mapa.set(palabra,1);
@@ -27,11 +20,7 @@ function RellenaMapa(array){
         }
     }
     document.write("<hr>")
-    //bucle que recorrera el mapa mostrandolo en pantalla
     for(let [palabra,numero] of mapa){
         document.write("<b>Palabra:</b> "+palabra+" ---  <b>Repetida:</b> "+numero+" veces<br><hr>");
     }
 }
-
-//llamamos a la función y le pasamos el array de palabras
-RellenaMapa(palabras);
