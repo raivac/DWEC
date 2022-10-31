@@ -9,28 +9,30 @@ do{
 }   
 while(palabra !=null && palabra!="");
 
+//creamos la funcion a la que le pasaremos el array
 function Anagrama(array){
-   const arrOrd = [];
-   let letras;
+
+    //eliminamos el ultimo elemento que se queda vacio al terminar el bucle del prompt.
+    array.pop();
+    //declaramos las nuevas variables
+    const arrOrd = [];
+    let letras;
+   /*bucle  que separara los caracteres de cada string , los oredenara y los volvera a juntar,seguidamete lo 
+    metera en un nuevo array*/
     for(palabra of array){
         letras = palabra.split("").sort().join("");
         arrOrd.push(letras);
     }
-
-    //eliminara el ultimo elemento que se queda vacio al terminar el bucle del prompt.
-    arrOrd.pop();
-    console.log(arrOrd);
-
-
-
-    let cont = 0;
+    //bucle que comprobara si se repiten las palabras y contara las veces que se repite
+    let cont = 1;
     for (let i = 1; i <= arrOrd.length; i++) {
         if(arrOrd[i-1]===arrOrd[i]){
             cont++;
         }
      }
-     
-    if(cont==arrOrd.length+1){
+    /*si las palabras se repiten tanto como palabras tiene el array significara que son todas iguales y devolvera true,
+    y si el valor es diferente devolvera false*/
+    if(cont==arrOrd.length){
         alert("Las palabras introducidas son anagramas");
         return true;
     }
@@ -39,4 +41,6 @@ function Anagrama(array){
         return false;
     }
 }
+
+//llamamos a la funcion y le metemos el array.
 Anagrama(palabras);
