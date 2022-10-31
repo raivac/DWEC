@@ -2,6 +2,7 @@
 var num = parseInt(prompt("Dime un numero y te dire su valor de Triibonacci"));
 
 
+
 /*-----SOLUCION RECURSIVA-----*/
 //creammos la funcion recursiva a la que le pasaremos el valor
 function TribonacciRe(n){
