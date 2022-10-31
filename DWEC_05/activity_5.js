@@ -3,11 +3,19 @@
 const palabras = [];
 const mapa = new Map();
 var palabra = prompt("Introduce una palabra o dejelo vacio para terminar");
+if(palabra==undefined){
+    
+    alert("Ha cancelado el programa");
+}
 
 //bucle que irá pidiendo palabras hasta que se deje vacio
 while(palabra !=null && palabra!=""){
+    
     palabras.push(palabra);
     palabra=prompt("Introduce una palabra o dejelo vacio para terminar");
+    if(palabra==undefined){
+        alert("Ha cancelado el programa");
+    }
 }
 
 //declaramos la fucion y le pasamos el array
