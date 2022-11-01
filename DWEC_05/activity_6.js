@@ -38,7 +38,7 @@ if(num!=undefined){
 
     /*-----SOLUCION NO RECURSIVA-----*/
     function FibonacciNoRe(n){
-   
+        //SIN TERMINAR
         let res=0;
         /*bucle que hasta que el valor dado no sea 0 irá guardando en una variable nueva(res) el resultado de la de la resta de 
         esta nueva vaiable menos el valor dado y posteriormente se le restara 1 al valor dado para que termine el bucle al llegar 0 */
