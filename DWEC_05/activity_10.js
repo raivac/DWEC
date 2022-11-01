@@ -1,0 +1,4 @@
+function Filtro(array,funcion){
+
+
+}
