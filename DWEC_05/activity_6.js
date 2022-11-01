@@ -18,7 +18,6 @@ do{
 
 //continuara con el programa si no se cancela
 if(num!=undefined){
-    
     //parseamos el numero dado
     num = parseInt(num);
 
