@@ -54,7 +54,7 @@ function Filtro3(array, funcion) {
 //la cuarta funcion devolvera solo las palabras que empiecen por la letra a
 function Filtro4(array, funcion) {
     
-    document.write("<br><b>FILTRO 4 Solo palabras que que empiezan po A:</b>  <br><br>")
+    document.write("<br><b>FILTRO 4 Solo palabras que que empiezan por A:</b>  <br><br>")
     //filtraremos el contenido comprobado si el primer caracter es a o A.
     const arrayFiltrado=array.filter(x => x[0]=='a'|| x[0]=='A');
     arrayFiltrado.forEach(function(e,i) {
