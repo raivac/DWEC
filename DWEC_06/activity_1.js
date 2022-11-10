@@ -28,6 +28,7 @@ function Punto(cX,cY){
     }
 }
 
+
 let a = new Punto(3,5);
 let b = a.copy()
 
