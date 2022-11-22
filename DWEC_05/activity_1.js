@@ -7,7 +7,7 @@ for (let i = 0; i < 500; i++) {
 }
 
 
-function EvenOdd(x) {
+function EvenOdd(x) {                               
 
     return x % 2 == 0 ? "even" : "odd";
 
