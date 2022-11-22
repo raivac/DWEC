@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ex aperiam accusantium error odit placeat ad, id rem illo ullam libero eaque quod, cum enim alias exercitationem voluptatibus tenetur at.</li>
+        <li>Doloribus cum architecto praesentium doloremque repellat illo quaerat asperiores necessitatibus quis corrupti voluptates itaque a tempore inventore unde, ex dicta similique consequatur atque cumque. Ab eligendi quis labore quaerat. Rerum?</li>
+        <li>Dolorum quod assumenda animi velit repellendus hic, quasi culpa voluptate ut ducimus doloribus blanditiis nemo. Minus numquam, ducimus omnis expedita, quibusdam fugit quos dolorem sit maiores officiis nisi incidunt commodi?</li>
+        <li>Commodi, suscipit quo! Nam fuga quaerat voluptatum atque? At dolorum ab consequuntur, ad assumenda dignissimos aliquam, veritatis voluptas quos laborum, quod quibusdam iusto molestias commodi maiores amet? Dolor, necessitatibus soluta.</li>
+        <li>Beatae repellat sit voluptatibus officiis adipisci veritatis eum expedita magni a repellendus ab distinctio illo labore nesciunt animi eos minus, tenetur tempora soluta voluptates. Voluptatibus assumenda quisquam a suscipit dolores!</li>
+        <li>Natus dolor sunt accusantium tempora ipsum maxime totam assumenda ad obcaecati nam, tenetur non iusto voluptates laborum dolorum mollitia error unde labore. Dolor consequatur voluptatibus obcaecati porro magni ipsa error!</li>
+        <li>Hic velit fugiat possimus nesciunt, nihil officiis soluta! Sint quod sequi, quo consequuntur possimus velit ex distinctio tenetur rerum libero recusandae vitae, nostrum deleniti illo illum molestias, saepe et dicta!</li>
+        <li>Ipsa saepe porro ipsam ratione molestias deleniti! Fugiat quae veritatis voluptatum optio natus illum hic fuga sint tenetur nostrum odio perferendis repellendus nisi, placeat exercitationem eius, doloremque corrupti. Explicabo, odit.</li>
+        <li>Omnis, saepe iusto? Corporis sit soluta ex vero totam cupiditate, voluptate sint et quasi nobis animi rem impedit aperiam ullam assumenda doloremque aliquid perspiciatis culpa neque id delectus. Quaerat, maiores.</li>
+    </ol>
+
+    
+</body>
+    <script>
+        let tutexto = prompt("Dame texto:");
+        let tuposicion = prompt("Dame posicion");
+
+        let lista = document.getElementsByTagName("ol")[0];
+
+        let nuevoP = document.createElement("li");
+        nuevoP.innerHTML=("<strong>"+tutexto+"</strong>");
+        if(tuposicion == 10){
+            lista.appendChild(nuevoP);
+        }
+        else{
+            lista.insertBefore(nuevoP,lista.children[tuposicion  -1]);
+        }
+    </script>
+</html>

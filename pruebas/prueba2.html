@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="principal">
+        <p>Soy el primer párrafo</p>
+        <p>Soy el segundo párrafo</p>
+        <p>Soy el tercer párrafo</p>
+        </main>
+    <script>
+        let capa=document.getElementById("principal");
+        let nuevoP=document.createElement("p");
+        nuevoP.textContent="Soy el nuevo párrafo";
+        capa.appendChild(nuevoP);
+    </script>
+</body>
+</html>

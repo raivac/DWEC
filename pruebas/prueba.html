@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas</title>
+</head>
+<body>
+    <main>
+        <h1>Sistema Solar</h1>
+        <h2>Sol</h2>
+        <p id="pSol" class="estrella">
+            El Sol, una estrella de tipo espectral <strong>G2</strong> que contiene más del 99,85% de la masa del
+            sistema. Con un diámetro de 1 400 000 km, se compone de un 75 % de hidrógeno, un 20 % de helio y
+            5 % de oxígeno, carbono, hierro y otros elementos.
+        </p>
+        <h2>Planetas</h2>
+        <p id="pPlanetas">
+            Los planetas, divididos en planetas interiores (también llamados terrestres o telúricos) y planetas
+            exteriores o gigantes. Entre estos últimos <strong>Júpite</strong> y <strong>Saturno</strong> se
+            denominan gigantes gaseosos, mientras que Urano y Neptuno suelen nombrarse gigantes helados.
+            Todos los planetas gigantes tienen a su alrededor anillos.
+        </p>
+    </main>
+    <section id="s1">
+        <h1 id="titulo">¿Quién soy?</h1>
+        <p id="parrafo1">Hola, soy <strong>Gema</strong>, soy la profe</p>
+        <p id="parrafo2">Pero solo hace 2 años</p>
+        <p id="parrafo3">Y este es mi instituto</p>
+    </section>
+    <script>
+
+        let x = document.getElementById("pSol");
+        // console.log(x.getAttribute("class"));
+        // console.log(x.hasAttribute("class"));
+
+        // let listaAtributos=document.getElementById("pSol").attributes;
+        // for(let atributo of listaAtributos){
+        //     console.log(`Atributo: ${atributo.name} `+`Valor: ${atributo.value}`);
+        // }
+        // document.getElementById("pSol").textContent='El Sol, una estrella de tipo espectral <strong>G2</strong> que contiene más del';
+        // document.getElementById("pSol").innerHTML='El Sol, una estrella de tipo espectral <strong>G2</strong> que contiene más del';
+        // document.getElementById("pSol").style="color:white;background-color:blue";
+        // let estilo = window.getComputedStyle(x);
+        // console.log(estilo.color);
+        
+        let parrafo1=document.getElementById("parrafo1");
+        for(let hijo of parrafo1.childNodes){
+            console.log(`Texto: ${hijo.nodeValue}"\n`+`Tipo de nodo: ${hijo.nodeType}, ${hijo.nodeName}`);
+        }
+
+
+
+    </script>
+</body>
+</html>
