@@ -58,6 +58,9 @@ function Laptop(brand, model, ram, disk, screen,autonomy){
     this.toString = () => this.__proto__.toString() + ` -  Autonomy: ${this.autonomy} hours`;
 }
 
+
+/**********************************************************************************************/
+
 //creamos un computer y una laptop y le pasamos la marca y el modelo.
 let computer = new Computer("Asus", "JetForce");
 let laptop = new Laptop("Acer", "3000xp");
