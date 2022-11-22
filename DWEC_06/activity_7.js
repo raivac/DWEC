@@ -4,7 +4,7 @@
     nif = nif.toUpperCase();
 
     //declaramos la exprasion regular
-    var nifValido = /^[XYZ]?\d{5,8}[A-Z]$/;
+    var nifValido = /[XYZ]{0,1}[0-9]{8}[A-Z]{1}/;
 
     //si el nif introducio cumple con la expresion regular...
     if(nifValido.test(nif) == true){
