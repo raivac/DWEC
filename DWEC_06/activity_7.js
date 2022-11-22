@@ -10,6 +10,7 @@
     if(nifValido.test(nif) == true){
 
         //separamos el numero de la letra cogiendo todo el string menos el ultimo caracter(la letra)
+        //Lo separamos ants de cambiar las letras XYZ a numeros por si la letra final es una de estas
         let numero = nif.substring(0,nif.length-1);
 
         //si el numero contiene la primera letra X Y o Z la cambiaremos por el numero que pide el ejercico
