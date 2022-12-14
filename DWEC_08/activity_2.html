@@ -7,7 +7,6 @@
     <title>Activity 2</title>
     <style>
         main{
-            position: relative;
             background-color: rgb(77, 181, 216);
             color: white;
             text-align: center;
@@ -34,9 +33,8 @@
         let main = document.getElementsByTagName("main")[0];
         
         //creamos el evento cuando se pulse la tecla
-         document.addEventListener("keydown", function(ev){
-
-            //si sucede la combinacion Alt F12 modificaremos el fondo del main
+        document.addEventListener("keydown", function(ev){
+        //si sucede la combinacion Alt F12 modificaremos el fondo del main
             if(ev.altKey && ev.key=="F12"){
                 main.style.backgroundImage = "url('https://source.unsplash.com/random')";
                 main.style.backgroundWidth= "100%";

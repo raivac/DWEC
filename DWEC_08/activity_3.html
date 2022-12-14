@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+    <style>
+        div{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: white;
+            border: 2px solid black;
+            top: 25%;
+            left: 25%;
+            color: #0000ff0ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Activity 3 - Capa rollup</h1>
+    <hr>
+
+    <div id="div"></div>
+
+    <script>
+
+        let div = document.getElementById("div");
+
+        //cuando se pase el cursor se volvera verde
+        div.addEventListener("mouseenter", function(ev){
+                div.style.backgroundColor = "#008000";
+        });
+
+        //cuando se quite el cursor se volvera blanco
+        div.addEventListener("mouseleave", function(ev){
+            
+            div.style.backgroundColor = "#ffffff";
+        });
+
+        //cuando se pulse el boton primario se volvera rojo
+        div.addEventListener("mousedown", function(ev){
+            if(ev.button == 0) {
+                div.style.backgroundColor = "#ff0000";
+            }
+        });
+
+        //cuando se pulse el boton secundario se volvera rojo
+        div.addEventListener("contextmenu",function(ev){
+            ev.preventDefault();
+            div.style.backgroundColor = "#0000ff";   
+        });
+
+        //cuando se quite el boton primario o el boton secundario se volvera verde
+        div.addEventListener("mouseup", function(ev){
+            if(ev.button == 0 || ev.button == 2) {
+                div.style.backgroundColor = "#008000";
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
