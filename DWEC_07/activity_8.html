@@ -84,18 +84,8 @@
 
         //bucle que reemplazara los parrafos para invertirlos
         for(let i = 0; i< parrafos.length; i++){
-
-            //cogemos el primer parrafo del array(que es el ultimo)
-            nuevoP.textContent = nuevosParrafos[i];
-
-            //cogemos el primer parrafo de la pagina
-            let pViejo=document.getElementsByTagName("p")[i];
-
-            //cambiamos los parrafos 
-            main.replaceChild(nuevoP, pViejo);
+            parrafos[i].textContent = nuevosParrafos[i];
         }
-
-        /*NO HE CONSEGUIDO HACER QUE FUNCIONE, NO LOS REEMPLAZA COMO DEBERIA*/
         
         //imprimir los parrafos por consola como deberian salir
         for(let parrafo of nuevosParrafos){

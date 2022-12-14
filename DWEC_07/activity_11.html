@@ -56,15 +56,9 @@
 
             //bucle que reemplazara la lista por la ordenada
             for(let i = 0; i<lista.length; i++){
-                //creamos los li con el contenido de la lista ordenada
-               nuevaLista.textContent = listaOrd[i];
-               //cogemos el elemento de la lista que reemplazaremos
-               let listaVieja=document.getElementsByTagName("li")[i];
-               //reemplazamos el viejo por el nuevo
-               ul.replaceChild(nuevaLista, listaVieja);
+                lista[i].textContent=listaOrd[i];
             }   
         }
-        /*ME PASA LO MISMO QUE EL DE INVERTIR LOS PARRAFOS, A LA HORA DE REEMPLAZAR NO HACE LO QUE DEBERIA*/
     </script>
     
 </body>
