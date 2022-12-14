@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1 </title>
+    <style>
+        button{
+            position: absolute;
+            background-color: rgb(248, 248, 0);
+            border: 2px solid rgb(0, 0, 0);
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Activity 1 - Cartel que persigue al ratón</h1>
+    <hr>
+    
+    <button></button>
+
+    <script>
+        //cogemos el body donde se movera el boton
+        let body = document.getElementsByTagName("body")[0];
+        //cogemos el primer boton
+        let boton = document.getElementsByTagName("button")[0];
+
+        //creamos el evento donde el boton persegira el cursor
+        document.addEventListener("mousemove", function(ev){
+                
+            //cambiamos el estilo del boton cambiando la posicion de este
+            //restamos las propiedades offset para que que se vea mejor
+            boton.style.left = `${ (ev.clientX - boton.offsetWidth) }px`;
+            boton.style.top = `${ (ev.clientY - boton.offsetHeight) }px`;
+
+            //iremos reemplazando el texto del boton
+            boton.innerHTML = "I will follow you";
+        });
+    </script>     
+</body>
+</html>

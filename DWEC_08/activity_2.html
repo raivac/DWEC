@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+    <style>
+        main{
+            position: relative;
+            background-color: rgb(77, 181, 216);
+            color: white;
+            text-align: center;
+            height: 800px;
+            width: 100%;
+        }
+        main>h2{
+            position: relative;
+            top:50%;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Activity 2 - Tecla que pone imagen de fondo</h1>
+    <hr>
+    
+    <main>
+        <h2>Press Alt + F12 to change background image</h2>
+    </main>
+
+    <script>
+        //cogemos el main al cual cambiaremos el fondo
+        let main = document.getElementsByTagName("main")[0];
+        
+        //creamos el evento cuando se pulse la tecla
+         document.addEventListener("keydown", function(ev){
+
+            //si sucede la combinacion Alt F12 modificaremos el fondo del main
+            if(ev.altKey && ev.key=="F12"){
+                main.style.backgroundImage = "url('https://source.unsplash.com/random')";
+                main.style.backgroundWidth= "100%";
+                main.style.backgroundHeight= "100%";
+            }
+        })
+    </script>
+</body>
+</html>
