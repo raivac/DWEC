@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 11</title>
+</head>
+<body>
+    <h1>Activity 11 - Ordenar lista</h1>
+    <hr>
+
+    <ul id="lista">
+        <li>arbol</li>
+        <li>perro</li>
+        <li>gato</li>
+        <li>ave</li>
+        <li>casa</li>
+        <li>coche</li>
+        <li>zoo</li>
+        <li>vaso</li>
+        <li>plato</li>
+        <li>recordar</li>
+    </ul>
+
+    <script>
+
+        //cogemos todos los elementos li
+        let lista = document.getElementsByTagName('li');
+        
+        //no se como coger la booleana del confirm con el setTimeout, me da siempre el valor 2
+        let confirmar = confirm("Desea ordernar la lista alfabeticamente?");
+        // let confirmar = window.setTimeout(()=>confirm("Desea ordernar la lista alfabeticamente?"),3000);
+        console.log(confirmar)
+
+        //crearemos los nuevos li ordenados
+        let nuevaLista = document.createElement("li");
+
+        //array que guardara la lista ordenada
+        const listaOrd = [];
+        
+        //lo usaremos para reemplazar los hijos
+        let ul = document.getElementById("lista");
+
+        //si se pulsa aceptar...
+        if(confirmar){
+           
+            //rellenamos el array con con el contenido de las listas
+            for(let i = 0; i<lista.length; i++){
+               listaOrd.push(lista[i].textContent);
+            }
+
+            //ordenamos alfabeticamente
+            listaOrd.sort();
+            console.log(listaOrd);
+
+            //bucle que reemplazara la lista por la ordenada
+            for(let i = 0; i<lista.length; i++){
+                //creamos los li con el contenido de la lista ordenada
+               nuevaLista.textContent = listaOrd[i];
+               //cogemos el elemento de la lista que reemplazaremos
+               let listaVieja=document.getElementsByTagName("li")[i];
+               //reemplazamos el viejo por el nuevo
+               ul.replaceChild(nuevaLista, listaVieja);
+            }   
+        }
+        /*ME PASA LO MISMO QUE EL DE INVERTIR LOS PARRAFOS, A LA HORA DE REEMPLAZAR NO HACE LO QUE DEBERIA*/
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+</head>
+<body>
+    <script>
+        
+        let hoy = new Date();
+
+        let cadu = hoy.getTime() + 1000 * 60 * 60 * 24 * 365;
+
+        let caducidad = new Date(cadu);
+
+        let confirmar = confirm("Desea ver las cookies?");
+
+        if(confirmar == true){
+
+            let arrayCookie=document.cookie.split ("; ");
+
+            for(let cookie of arrayCookie){
+
+                let [nombre,valor]=cookie.split ("=");
+
+                if(nombre == "visitas")
+
+                    if(valor==0){
+                        document.cookie=`visitas = 1; expires=${caducidad.toUTCString()}`;
+                    }
+                    else{
+                        document.cookie=`visitas = ${++valor}; expires=${caducidad.toUTCString()}`;  
+                    }
+            }
+           
+        }
+
+        else{
+            document.cookie=`visitas = 0; expires=${caducidad.toUTCString()}`;
+        }
+
+        if(!document.cookie){
+            document.cookie=`visitas = 0`;
+        }
+        
+        console.log(document.cookie)
+    </script>
+</body>
+</html>
