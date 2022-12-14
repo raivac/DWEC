@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 4</title>
+</head>
+<body>
+    <h1>Activity 4  - Control de velocidad</h1>
+    <hr>
+
+    <p id="p"></p>
+
+    <script>
+        //cogemos el elemento parrafo
+        let p = document.getElementById("p");
+
+        //creamos el contador que sera la velocidad
+        let cont = 0;
+        
+        //iniciamos el Speed a 0
+        p.textContent=`Speed ${cont}`;
+
+        //cuando se pulse una tecla
+        document.addEventListener("keydown", function(ev){
+
+            //si es la tecla de la flecha superior y el contador es inferior a 120W
+            if(ev.keyCode == 38 && cont<=120){
+                if(cont<120){
+                    cont++;
+                }
+                //iremos incrementando la velocidad en 1
+                p.textContent=`Speed ${cont}`;
+                
+                
+            }
+            //si es la tecla de la flecha inferior y el contador es superior a 0
+            if(ev.keyCode == 40 && cont>=0){
+                p.textContent=`Speed ${cont}`;
+                cont--;
+            }
+        });
+
+    </script>
+
+</body>
+</html>
