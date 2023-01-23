@@ -23,7 +23,7 @@ boton.addEventListener("mousedown", function (ev) {
         lista.appendChild(li);
         li.appendChild(borrar);
 
-        
+        //si se pulsa el boton borrara el elemento li anterior.
         borrar.addEventListener("click", function(ev){
             ev.target.parentElement.remove();
         });
