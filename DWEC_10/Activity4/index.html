@@ -25,19 +25,20 @@
             width: 250px;
 
         }
-        td{
-            text-align:right;
+
+        td {
+            text-align: right;
         }
     </style>
 </head>
 
 <body>
     <h1>Conversión de monedas</h1>
-    <form action="#">
+    <form>
         <table align="center">
             <tr>
                 <td>
-                    <input type="number" placeholder="Moneda base" size="4" style="text-align: right">
+                    <input id="valor" type="number" placeholder="Moneda base" size="4" style="text-align: right">
                 </td>
                 <td>
                     <select name=moneda1 id=moneda1>
@@ -118,32 +119,49 @@
                 </td>
             </tr>
         </table>
-        <br><button>Convertir</button>
-        <p><strong>Resultado: </strong>3,6226</p>
+        <br><button onclick="procesarFetch()">Convertir</button>
+        <p id="resultado"><strong>Resultado: </strong>3,6226</p>
     </form>
     <script>
 
         async function procesarFetch() {
+
             var conf = {
                 method: "GET",
                 mode: "cors"
             }
+
+            var apikey = "KWIhz98wnC1otCnKwxuNdXXP7dXcyMpC";
+            let resultado = document.getElementById("resultado");
+
+            let m1 = document.getElementById("moneda1");
+            let m2 = document.getElementById("moneda2");
+
+            var moneda1 = m1.options[m1.selectedIndex].text;
+            var moneda2 = m2.options[m2.selectedIndex].text;
+
+            let valor = document.getElementById("valor").value;
+            console.log(valor)
+            
             try {
-                const resp1 = await fetch("https//api.exchangeratesapi.io/latest");
+                const resp1 = await fetch("https//api.exchangeratesapi.io/v1/latest?access_key=" + apikey + "&from=" + moneda1 +"&to=" + moneda2 +"&amount="+valor, conf);
+
+                console.log(resp1.result);
+
                 const data = await resp1.json();
-                console.log(data)
+
+                console.log(data.result);
             }
             catch (error) {
                 console.log(error);
-
             }
+
+
         }
 
-        //Código principal dentro del evento load
-        // para asegurar la carga de los componentes
-        document.addEventListener('DOMContentloaded', (ev) => {
-            procesarFetch();
-        });
+        document.querySelector('form').addEventListener('submit', ev => {
+            ev.preventDefault()
+        })
     </script>
 </body>
 
