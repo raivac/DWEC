@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer made width promises</title>
+</head>
+
+<body>
+    <h1>Timer made width promises</h1>
+    <hr>
+    <p>Espere 5 segundos</p>
+    <script type="module">
+        let p = document.getElementsByTagName("p")[0];
+        import { temporizador } from "./functions/temporizador.js";
+        temporizador(5000).then(resolve => p.textContent = resolve)
+    </script>
+
+</body>
+
+</html>
