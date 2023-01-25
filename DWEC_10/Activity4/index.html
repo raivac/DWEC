@@ -131,7 +131,7 @@
                 mode: "cors"
             }
 
-            var apikey = "KWIhz98wnC1otCnKwxuNdXXP7dXcyMpC";
+            var apikey = "wkniLduZlbVkoeG9VaFe2wtF8QQ1B7Ll";
             let resultado = document.getElementById("resultado");
 
             let m1 = document.getElementById("moneda1");
@@ -141,22 +141,21 @@
             var moneda2 = m2.options[m2.selectedIndex].text;
 
             let valor = document.getElementById("valor").value;
-            console.log(valor)
-            
+
             try {
-                const resp1 = await fetch("https//api.exchangeratesapi.io/v1/latest?access_key=" + apikey + "&from=" + moneda1 +"&to=" + moneda2 +"&amount="+valor, conf);
 
-                console.log(resp1.result);
+                let response = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${moneda2}&from=${moneda1}&amount=${valor}`, {
+                    method: "GET",
+                    headers: {apikey}
+                });
 
-                const data = await resp1.json();
+                let data = await response.json();
 
-                console.log(data.result);
+                resultado.textContent = data.result
             }
             catch (error) {
                 console.log(error);
             }
-
-
         }
 
         document.querySelector('form').addEventListener('submit', ev => {
