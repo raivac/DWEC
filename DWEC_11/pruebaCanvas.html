@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+
+<body>
+
+    <button></button>
+
+    <canvas id="lienzo" width="500" height="500"></canvas>
+
+    <canvas id="lienzo2" width="500" height="500"></canvas>
+
+    <canvas id="lienzo3" width="500" height="500"></canvas>
+
+    <canvas id="lienzo4" width="500" height="500"></canvas>
+
+
+    <script>
+        const lienzo = document.getElementById('lienzo');
+        const ctx = lienzo.getContext('2d');
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(0, 0, 1000, 1000);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(70, 50, 100, 100);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(330, 50, 100, 100);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(200, 200, 100, 100);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(100, 250, 300, 150);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(100, 330, 100, 150);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(300, 330, 100, 150);
+
+
+
+        const lienzo2 = document.getElementById('lienzo2');
+        const ctx2 = lienzo2.getContext('2d');
+        ctx2.lineWidth = "2";
+        ctx2.strokeStyle = "black";
+
+        ctx2.beginPath();
+        ctx2.moveTo(400, 100);
+        ctx2.lineTo(300, 200);
+        ctx2.lineTo(400, 300);
+        ctx2.lineTo(500, 200);
+        ctx2.lineTo(400, 100);
+        ctx2.stroke();
+
+
+
+
+
+        const lienzo3 = document.getElementById('lienzo3');
+        const ctx3 = lienzo3.getContext('2d');
+        ctx3.lineWidth = "2";
+        ctx3.strokeStyle = "black";
+
+        ctx3.moveTo(250, 0);
+        ctx3.beginPath();
+        ctx3.arc(50, 60, 50, Math.PI * 3 / 2, Math.PI / 2, true);
+        ctx3.lineTo(150, 110);
+        ctx3.lineTo(150, 10);
+        ctx3.lineTo(50, 10);
+        ctx3.stroke();
+        ctx3.closePath();
+
+
+        const lienzo4 = document.getElementById("lienzo4");
+        const ctx4 = lienzo4.getContext("2d");
+        ctx4.beginPath();
+        ctx4.lineWidth = "2";
+        ctx4.strokeStyle = "black";
+        ctx4.moveTo(50, 50);
+        ctx4.lineTo(200, 50);
+        ctx4.stroke();
+        ctx4.fillStyle = "red";
+        ctx4.textAlign="start";
+        ctx4.font = "bold 30px sans-serif";
+        ctx4.fillText("Prueba", 50, 50);
+        ctx4.closePath()
+
+
+
+
+
+    </script>
+    </bod y>
+
+</html>
