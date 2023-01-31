@@ -47,9 +47,9 @@
 
 
             /*************** VELOCIDAD RANDOM **************/
-            let vx = parseInt(Math.random()* 10 + 1);
-            let vy = parseInt(Math.random()* 10 + 1); 
-           
+            let vx = parseInt(Math.random() * 10 + 1);
+            let vy = parseInt(Math.random() * 10 + 1);
+
             this.vx = vx * posNeg[posNegRand];
             this.vy = vy * posNeg[posNegRand];
 
@@ -69,19 +69,24 @@
                 ctx.fill();
                 ctx.closePath();
 
-                this.x -= this.vx;
-                this.y -= this.vy;
-
-                if (this.y > height || this.x < 0) {
-
-                    this.x = parseInt(Math.random() * height);
-                    this.y = parseInt(Math.random() * width);
+                //cuando llegue a la esquina se encargara de rebotar y redirigir
+                if (this.y > height || this.y <= 0) {
+                    this.vy = -this.vy
+                    this.y += this.vy;
+                } else {
+                    this.y += this.vy;
+                }
+                if (this.x > width || this.x <= 0) {
+                    this.vx = -this.vx
+                    this.x += this.vx;
+                } else {
+                    this.x += this.vx;
                 }
             }
         }
 
 
-
+        /**************************Array con las bolas*************************/
         let bolas = [];
 
         for (let i = 0; i < 50; i++) {
@@ -90,8 +95,9 @@
         }
 
 
+        /**************************funcion animar*************************/
 
-
+        //pintara todas las bolas y realizara la animacion
         function animar() {
 
             ctx.clearRect(0, 0, width, height);
