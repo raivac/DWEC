@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelotas Saltarinas</title>
+    <style>
+        body {
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pelotas Saltarinas</h1>
+    <hr>
+    <canvas id="canvas"></canvas>
+
+
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        // obtenemos las dimensiones del canvas
+        var width = canvas.width = window.innerWidth;
+        var height = canvas.height = window.innerHeight;
+
+        /************************** funcion animar ************************/
+
+        function bola() {
+
+            let colores = ["blue", "red", "pink", "orange", "green", "purple", "lightgreen", "yellow", "lightred", "cyan"];
+            let numcColor = parseInt(Math.random() * 9);
+
+            let posNeg = [1, -1];
+            let posNegRand = parseInt(Math.random() * 2);
+
+            /*************** POSICIONES RANDOM **************/
+            this.x = parseInt(Math.random() * height);
+            this.y = parseInt(Math.random() * width);
+
+
+            /*************** VELOCIDAD RANDOM **************/
+            let vx = parseInt(Math.random()* 10 + 1) ;
+            let vy = parseInt(Math.random()* 10 + 1); 
+           
+            this.vx = vx * posNeg[posNegRand];
+            this.vy = vy * posNeg[posNegRand];
+            console.log(vx);
+
+            /*************** COLORES RANDOM **************/
+            this.color = colores[numcColor];
+
+            /*************** RADIO RANDOM **************/
+            this.radio = parseInt(Math.random() * 50 + 10);
+
+            this.pintar = function () {
+
+
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2, true);
+                ctx.fill();
+                ctx.closePath();
+                this.x -= vx;
+                this.y += vy;
+
+                if (this.y > height || this.x < 0) {
+                    this.x = width;
+                    this.y = 0;
+                }
+            }
+        }
+
+        let bolas = [];
+
+        for (let i = 0; i < 50; i++) {
+
+            bolas.push(new bola());
+        }
+
+        function animar() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let bola of bolas) {
+                bola.pintar();
+            }
+            requestAnimationFrame(animar);
+        }
+        animar();
+
+
+
+    </script>
+</body>
+
+</html>
