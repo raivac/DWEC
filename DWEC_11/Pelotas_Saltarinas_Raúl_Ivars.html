@@ -26,7 +26,12 @@
         var width = canvas.width = window.innerWidth;
         var height = canvas.height = window.innerHeight;
 
-        /************************** funcion animar ************************/
+
+
+
+
+
+        /************************** funcion crear bola ************************/
 
         function bola() {
 
@@ -57,20 +62,25 @@
             this.radio = parseInt(Math.random() * 50 + 10);
 
             this.pintar = function () {
+
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
                 ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2, true);
                 ctx.fill();
                 ctx.closePath();
+
                 this.x -= this.vx;
-                this.y += this.vy;
+                this.y -= this.vy;
 
                 if (this.y > height || this.x < 0) {
-                    this.x = width;
-                    this.y = 0;
+
+                    this.x = parseInt(Math.random() * height);
+                    this.y = parseInt(Math.random() * width);
                 }
             }
         }
+
+
 
         let bolas = [];
 
@@ -79,7 +89,11 @@
             bolas.push(new bola());
         }
 
+
+
+
         function animar() {
+
             ctx.clearRect(0, 0, width, height);
 
             for (let bola of bolas) {
