@@ -42,12 +42,13 @@
 
 
             /*************** VELOCIDAD RANDOM **************/
-            let vx = parseInt(Math.random()* 10 + 1) ;
+            let vx = parseInt(Math.random()* 10 + 1);
             let vy = parseInt(Math.random()* 10 + 1); 
            
             this.vx = vx * posNeg[posNegRand];
             this.vy = vy * posNeg[posNegRand];
-            console.log(vx);
+
+            console.log(this.vy);
 
             /*************** COLORES RANDOM **************/
             this.color = colores[numcColor];
@@ -56,15 +57,13 @@
             this.radio = parseInt(Math.random() * 50 + 10);
 
             this.pintar = function () {
-
-
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
                 ctx.arc(this.x, this.y, this.radio, 0, Math.PI * 2, true);
                 ctx.fill();
                 ctx.closePath();
-                this.x -= vx;
-                this.y += vy;
+                this.x -= this.vx;
+                this.y += this.vy;
 
                 if (this.y > height || this.x < 0) {
                     this.x = width;
