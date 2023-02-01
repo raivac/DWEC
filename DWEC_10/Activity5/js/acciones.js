@@ -1,7 +1,7 @@
 let div = document.getElementById("div");
 
 for (let i = 1; i <= 50; i++) {
-    fetch("https:///picsum.photos/300/300?image=" + i).then((ev) => {
+    fetch("https:///picsum.photos/300/300?image=" + i+"&blur").then((ev) => {
 
         //creamos el contenedos junto con la imagen
         let img = document.createElement('img');
