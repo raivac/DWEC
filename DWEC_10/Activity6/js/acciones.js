@@ -8,8 +8,8 @@ fetch("https://randomuser.me/api/?results=1000").then(response => {
         let url = result.results[i].picture.large;
         fotos[i] = url;
     }
+    let numRand = parseInt(Math.random() * fotos.length);
     for (let i = 0; i < 50; i++) {
-        let numRand = parseInt(Math.random() * fotos.length);
         let img = document.createElement("img");
         img.setAttribute("src", fotos[numRand]);
         div.appendChild(img);
@@ -18,14 +18,13 @@ fetch("https://randomuser.me/api/?results=1000").then(response => {
     let temp = setInterval(() => {
         if (cont <= 100) {
             for (let i = 1; i <= 50; i++) {
-                urlNuevo(i)
+                urlNuevo(i);
             }
             cont++;
         } else {
             clearInterval(temp);
         }
     }, 200);
-
 })
 function urlNuevo(pos) {
     let img = document.getElementsByTagName("img")[pos - 1];
