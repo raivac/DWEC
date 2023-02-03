@@ -26,8 +26,8 @@ fetch("https://randomuser.me/api/?results=1000").then(response => {
         }
     }, 200);
 })
-function urlNuevo(pos) {
-    let img = document.getElementsByTagName("img")[pos - 1];
+function urlNuevo(i) {
+    let img = document.getElementsByTagName("img")[i - 1];
     let nuevaImg = document.createElement("img");
     let numRand = parseInt(Math.random() * fotos.length);
     nuevaImg.src = fotos[numRand];
