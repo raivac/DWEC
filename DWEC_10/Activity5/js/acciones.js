@@ -1,8 +1,18 @@
 //cogemos el elemento div del html
 let div = document.getElementById("div");
 
+
+//creamos la duracion del blur (1 semana);
+let hoy = new Date();
+let cadu = hoy.getTime() + 1000 * 60 * 60 * 24 * 7;
+let caducidadSemana = new Date(cadu)-hoy;
+//creamos la duracion del blur para probar(5segundos);
+let cadu5segundos = hoy.getTime() + 1000 * 5;
+let caducidadPrueba = new Date(cadu5segundos)-hoy;
+
+
 for (let i = 1; i <= 50; i++) {
-    
+
     fetch("https:///picsum.photos/300/300?image=" + i).then((ev) => {
 
         //creamos el contenedos junto con la imagen
@@ -24,11 +34,11 @@ for (let i = 1; i <= 50; i++) {
             else if (img.className == "") {
                 img.className = "blur";
                 img.setAttribute("src", "https:///picsum.photos/300/300?image=" + i + "&blur");
-                setTimeout( () => {
+                setTimeout(() => {
                     img.setAttribute("src", ev.url);
-                }, 604800000);
-                //604,800,000 equivale a una semana en milisegundos por lo que en una semana volvera a estar sin blur
-                //si se prueba con 5000 o otro mas bajo se ve que funciona
+                }, caducidadPrueba);
+                //esta puesta la caducidadPrueba para probar que sera de 5 segundos
+                //para que dure 1 semana poner caducidadSemana
             }
         });
     });
