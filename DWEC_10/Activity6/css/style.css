@@ -20,11 +20,11 @@ h1{
     padding: 1.5vw;
 }
 div{
-    display: flex;
-    justify-content:space-evenly;            
-    margin: 2vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 img{
     border: 2px solid white;
     border-radius: 2vw;
+    margin:2vw;
 }
