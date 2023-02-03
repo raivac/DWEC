@@ -18,33 +18,42 @@
         // obtenemos las dimensiones del canvas
 
         function Barra() {
-
-            this.color = "green";
-
-            let x = 0;
+            this.color = "black";
+            this.x = 0;
             this.pintar = () => {
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
-                ctx.fillRect(x, 0, 5, 50);
-                x += 10;
-                if(x>100){
-                    x=0;
+                ctx.fillRect(this.x, 0, 5, 50);
+                this.x += 10;
+                if (this.x >= 100) {
+                    this.x = 0;
                 }
                 ctx.closePath();
             }
         }
 
+        //guardamos las barras en un array sumandole el doble que ocupa el rectangulo, a la posicion 
+        let y = 0;
         let barras = [];
         for (let i = 0; i < 10; i++) {
-            barras.push(new Barra())
+            barras.push(new Barra());
+            barras[i].x += y;
+            y += 10;
         }
 
         function animar() {
-            ctx.clearRect(0, 0, 100, 100);
-            for (let barra of barras) {
-                barra.pintar();
+            
+            ctx.clearRect(0, 0, 200, 200);
+            for (let i = 0; i < barras.length; i++) {
+                barras[i].pintar();
+                if(i>0){
+                barras[i-1].color="grey"
             }
-            requestAnimationFrame(animar);
+            }
+            setTimeout(() => {
+                requestAnimationFrame(animar); 
+            }, 1000);
+            
         }
         animar();
     </script>
