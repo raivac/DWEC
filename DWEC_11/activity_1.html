@@ -15,8 +15,8 @@
     <script>
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
-        // obtenemos las dimensiones del canvas
-
+        
+        //Creamos el objeto barra al cual le cambiaremos el color
         function Barra() {
             this.color = "black";
             this.x = 0;
@@ -40,7 +40,9 @@
             barras[i].x += y;
             y += 10;
         }
+        
 
+        //funcion que recorrera el array donde estan las barras y irá cambiando el color de la barra cada 1 segundo
         function animar() {
 
             ctx.clearRect(0, 0, 200, 200);
